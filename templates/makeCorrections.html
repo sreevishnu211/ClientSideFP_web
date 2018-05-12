@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/bootstrap-4.0.0-dist/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+        <a class="navbar-brand" href="#">Atendance</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/dashboard">Dashboard<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/aboutus">About Us</a>
+            </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+            <form action="/makeCorrections" method="POST">
+                <div class="form-row">
+                        <input type="text" class="form-control" placeholder="Enter Date in DD-MM-YY format" name="date" id="date">
+                </div>
+                <div class="form-row mt-2">
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" placeholder="Enter Sem S" name="sem" id="sem">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" placeholder="Enter Class C" name="class" id="class">
+                    </div>
+                </div>
+                <div class="form-row mt-2">
+                    <div class="col">
+                            <button type="submit" class="btn btn-block btn-primary">Check</button>
+                    </div>
+                </div>
+            </form>
+            {% if msg %}
+                <div class="alert alert-danger mt-3" role="alert">
+                    {{msg}}                 
+                </div>
+            {% endif %}
+    </div>
+
+<script src="../static/jquery-3.3.1.min.js"></script>
+<script src="../static/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+</body>
+</html>

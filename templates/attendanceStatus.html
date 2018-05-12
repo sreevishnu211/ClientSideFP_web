@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/bootstrap-4.0.0-dist/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+        <a class="navbar-brand" href="#">Atendance</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/dashboard">Dashboard<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/aboutus">About Us</a>
+            </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <form action="/attendanceStatus" method="POST">
+            <div class="form-row">
+              <div class="col-7">
+                <input type="text" class="form-control" placeholder="Enter USN" name="usn" id="usn">
+              </div>
+              <div class="col">
+                    <button type="submit" class="btn btn-primary mb-2">Check</button>
+              </div>
+            </div>
+        </form>
+    </div>
+    {% if value %}
+    <div class="container">
+        <div class="alert alert-primary" role="alert">
+            Has Attended {{ value }} classes.                 
+        </div>
+    </div>
+    {% endif %}
+<script src="../static/jquery-3.3.1.min.js"></script>
+<script src="../static/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+</body>
+</html>

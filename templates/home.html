@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/bootstrap-4.0.0-dist/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+        <a class="navbar-brand" href="#">Atendance</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+            </li>
+            {% if session['isLoggedIn'] %}
+                <li class="nav-item">
+                    <a class="nav-link" href="/dashboard">Dashboard<span class="sr-only">(current)</span></a>
+                </li>
+            {% endif %}
+            <li class="nav-item">
+                <a class="nav-link" href="/aboutus">About Us</a>
+            </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                {% if session['isLoggedIn'] %}
+                    <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+                {% else %}
+                    <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+
+    <main role="main" class="container">
+        <div class="jumbotron">
+          <h1>Lorem ipsum dolor sit amet.</h1>
+          <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+              In iaculis sollicitudin neque eu pellentesque. Ut ac ultrices nisi. 
+              Pellentesque vitae volutpat augue. Integer neque lectus, porta eu erat non,
+               commodo malesuada quam. Aliquam ut scelerisque ligula, ac blandit est. 
+               Nunc pretium est purus, sit amet rhoncus erat efficitur sit amet. 
+               In at lacus id purus suscipit semper sit amet sit amet augue. Nullam
+                sit amet tristique odio. Ut eget ipsum ut ipsum ultricies rutrum.
+                 Nunc at risus eu nunc feugiat consectetur. Nullam quis malesuada 
+                 ipsum, a faucibus odio. Proin sollicitudin id libero et laoreet.
+                  Nunc blandit at ligula id efficitur.</p>
+          <a class="btn btn-lg btn-primary" href="#" role="button">Lorem ipsum dolor sit amet &raquo;</a>
+        </div>
+    </main>
+<script src="../static/jquery-3.3.1.min.js"></script>
+<script src="../static/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+</body>
+</html>
